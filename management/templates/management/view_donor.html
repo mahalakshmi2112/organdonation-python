@@ -1,0 +1,63 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: lightyellow;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+            color: darkolivegreen;
+        }
+        table {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: darkgreen;
+        }
+        td {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Donor Information</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Blood Group</th>
+                <th>Organ</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for donor in donors %}
+            <tr>
+                <td>{{ donor.name }}</td>
+                <td>{{ donor.age }}</td>
+                <td>{{ donor.blood_group }}</td>
+                <td>{{ donor.organ }}</td>
+                <td>{{ donor.contact }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No donors found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

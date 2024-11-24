@@ -1,0 +1,63 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+        table {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: darkblue;
+        }
+        td {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Recipient Information</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Blood Group</th>
+                <th>Organ Needed</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipient in recipients %}
+            <tr>
+                <td>{{ recipient.name }}</td>
+                <td>{{ recipient.age }}</td>
+                <td>{{ recipient.blood_group }}</td>
+                <td>{{ recipient.organ_needed }}</td>
+                <td>{{ recipient.contact }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No recipients found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

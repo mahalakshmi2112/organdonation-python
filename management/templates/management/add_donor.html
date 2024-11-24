@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h2 style="text-align:center;">Donor Registration Form</h2>
+        <form action="" method="POST">
+            {%{% csrf_token %}%}
+            <table>
+                <tr>
+                    <th>Feild</th>
+                    <th>Input</th>
+                </tr>
+                <tr>
+                    <td>{{form.name.label_tag}}</td>
+                    <td>{{form.name}}</td>
+                </tr>
+                <tr>
+                    <td>{{form.age.label_tag}}</td>
+                    <td>{{form.age}}</td>
+                </tr>
+                <tr>
+                    <td>{{form.blood_type.label_tag}}</td>
+                    <td>{{form.blood_type}}</td>
+                </tr>
+                <tr>
+                    <td>{{form.organ.label_tag}}</td>
+                    <td>{{form.organ}}</td>
+                </tr>
+                <tr>
+                    <td>{{form.contacinfot.label_tag}}</td>
+                    <td>{{form.contactinfo}}</td>
+                </tr>
+                <tr>
+                    <td>
+                    <buttom type="submit">submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+    </html>
